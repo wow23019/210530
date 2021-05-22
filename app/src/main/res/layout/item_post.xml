@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tv_post_like_amount"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/item_dashboard_margin"
+    android:background="@drawable/item_dashboard_background"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="@dimen/item_dashboard_padding">
+
+    <ImageView
+        android:id="@+id/iv_post_image"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_dashboard_image_height"
+        android:layout_margin="@dimen/item_dashboard_image_margin"
+        android:background="@color/colorImageViewBackground"
+        android:contentDescription="@string/content_description"
+        android:minHeight="@dimen/item_dashboard_image_height"
+        android:scaleType="fitXY"
+        android:src="@drawable/img_splash_background" />
+
+    <View
+        android:id="@+id/view_divider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider_height"
+        android:layout_below="@id/iv_post_image"
+        android:background="@color/colorBorder" />
+
+    <LinearLayout
+        android:id="@+id/ll_view_item_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view_divider"
+        android:background="@color/dashboard_item_details_bg"
+        android:paddingStart="@dimen/dashboard_item_paddingStartEnd"
+        android:paddingTop="@dimen/dashboard_item_paddingTopBottom"
+        android:paddingEnd="@dimen/dashboard_item_paddingStartEnd"
+        android:paddingBottom="@dimen/dashboard_item_paddingTopBottom">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.myway.utils.MSPTextViewBold
+                android:id="@+id/tv_post_item_caption"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/item_value_text_color"
+                android:textSize="@dimen/dashboard_item_textSize"
+                android:textStyle="bold"
+                tools:text="「此貼文無文字」" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/iv_post_like"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/before_liked"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/like_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="0"
+                    android:textColor="@android:color/background_dark"
+                    android:textSize="15sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/iv_post_like"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_post_user_image"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            tools:srcCompat="@tools:sample/avatars" />
+
+    </LinearLayout>
+</RelativeLayout>
